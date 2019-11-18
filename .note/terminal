@@ -1,0 +1,9 @@
+pipenv shell
+python manage.py runserver
+python manage.py makemigrations
+python manage.py migrate
+
+git add.
+git commit -m "message"
+git push origin master
+git pull origin master
