@@ -1,0 +1,38 @@
+~~작업을 했다
+
+git add . 	//작업한 모든 내용을 더한다
+git reset src/*~~  //잘못 추가한 부분을 뺄 때
+
+->
+
+add 한 작업내용을 commit msg로 만든다
+git commit   or   git commit -m “짧은메세지”
+
+->
+
+git push origin master		// origin remote에 master이라는 브랜치에 내 작업 내용을 올리겠다.
+
+———————————————————기본 ———————————
+// 새 브렌치 파는 법
+git checkout -b 브랜치 이름(ex dev, issueNum)
+..브랜치 이동
+git  checkout 브랜치 이름
+
+// 협업할 때 내가 작업하던 log가 뒤쳐져있을 경우 내껄 push 하려하면 pull 받으라 한다
+git  pull origin master	///git pull  -> 브랜치를 명시하지 않고  풀 받는건 좋지 않음
+
+// pull 받을 때 내 작업상황이 내 브렌치에 그대로 있으면 커밋메세지를 남기거나 stash 하라한다
+git stash 
+git stash pop		//스택이라 생각하면 된다. stash 하면 작업 내용이 담기고 pop하면 그대로 나온다 .. 때때로 충돌이 잘 난다. stash 하고 pull 받고 stash pop 하니 내가 담아둿던 내용이 pull 받은것과 충돌하기 때문 -> 일일이 잘 해결해줘야 함
+
+git 으로 협업할 때 충돌 제일 적게나게 하는 법
+- master 나 dev 브랜치가 아닌 브랜치에서 작업을 하고 소규모로 , 지속적으로 pull request 를 날린다
+- 사용예시
+- 작업을 한다
+- git chckout -b newBranck
+- newBranck라는 새로운 브랜치로 자동 이동되고 작업하던 내용도 모두 옮겨온다.
+- git add .  && git commit  —>  git push origin newBranch
+- master가 아닌 newBranck에 푸시를 한다
+- git 해당 레포 에 가면 풀리퀘스트 생성할래? 라는 메세지 떠서  풀리퀘 생성하고 날리고 머지하면 된다.,
+- 머지의 종류에는 스쿼시,리베이스.,, 아래 세개가 있다. 조금씩 차이는 남,
+￼
