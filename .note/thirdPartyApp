@@ -1,0 +1,7 @@
+django_countries
+    - https://github.com/SmileyChris/django-countries
+    - 전세계 나라 이름 받아오기
+
+django_seed
+    - https://github.com/Brobin/django-seed
+    - 가짜 데이터 넣기
