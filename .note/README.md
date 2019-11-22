@@ -5,25 +5,10 @@ Cloning Airbnb with Python, Django, Tailwind and more...
 ## Installation
 
 ### pipenv
-
 ```bash
-$ sudo -H pip install pipenv
-```
-
-```bash
-$ pipenv install --python $(which python3.7)
-```
-
-### Pillow Prerequisites
-
-https://pillow.readthedocs.io/en/stable/installation.html
-
-on Ubuntu 16.04 LTS
-
-```bash
-$ sudo apt-get install libtiff5-dev libjpeg8-dev libopenjp2-7-dev zlib1g-dev \
-    libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk \
-    libharfbuzz-dev libfribidi-dev
+pipenv --three                  // python version 3
+pipenv install django==2.2.6    // django version
+pipenv shell                    // Enter a bubble
 ```
 
 ### Initialize
@@ -33,6 +18,13 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 ```
+
+### Third Party App
+```bash
+pip install django-seed
+pip install django-countries
+```
+
 
 ### Seeding items
 
