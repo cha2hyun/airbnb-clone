@@ -43,6 +43,6 @@ python manage.py seed_rooms --number 150
 
 ```bash
 python manage.py seed_reviews --number 50
-python manage.py seed_list --number 50
+python manage.py seed_lists --number 50
 python manage.py seed_reservations --number 50
 ```

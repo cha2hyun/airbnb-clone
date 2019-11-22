@@ -8,7 +8,6 @@ from rooms import models as room_models
 
 NAME = "lists"
 
-
 class Command(BaseCommand):
 
     help = f"This command creates many {NAME}"
