@@ -59,3 +59,9 @@ python manage.py seed_reservations --number 50
 mailgun.com
 ID : cha2hyun.dev@gmail.com
 ```
+
+### To Do
+
+```bash
+Fix : git login -> When user doesnt have any name, public email, bio 
+```
