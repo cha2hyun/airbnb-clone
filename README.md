@@ -1,4 +1,5 @@
 # Airbnb Clone
+
 ```
 Cloning Airbnb with Python, Django, Tailwind and more...
 Last README update 19.11.22
@@ -7,6 +8,7 @@ Last README update 19.11.22
 # Installation
 
 ### pipenv
+
 ```bash
 pipenv --three                  // python version 3
 pipenv install django==2.2.6    // django version
@@ -14,10 +16,12 @@ pipenv shell                    // Enter a bubble
 ```
 
 ### Third Party App
+
 ```bash
 pip install django-seed
 pip install django-countries
 pip install Pillow
+pip install django-dotenv
 ```
 
 ### Initialize
@@ -45,4 +49,12 @@ python manage.py seed_rooms --number 150
 python manage.py seed_reviews --number 50
 python manage.py seed_lists --number 50
 python manage.py seed_reservations --number 50
+```
+
+### EMAIL
+
+```bash
+mailgun.com
+ID : cha2hyun.dev@gmail.com
+
 ```
