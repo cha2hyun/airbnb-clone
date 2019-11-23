@@ -60,8 +60,9 @@ mailgun.com
 ID : cha2hyun.dev@gmail.com
 ```
 
-### To Do
+### Todo later
 
 ```bash
+Beautify : verify_email.html
 Fix : git login -> When user doesnt have any name, public email, bio 
 ```
