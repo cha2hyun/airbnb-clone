@@ -22,6 +22,7 @@ pip install django-seed
 pip install django-countries
 pip install Pillow
 pip install django-dotenv
+pip install requests
 ```
 
 ### Initialize
@@ -30,6 +31,7 @@ pip install django-dotenv
 python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
+python manage.py runserver 8080
 ```
 
 ### Seeding items
@@ -56,5 +58,4 @@ python manage.py seed_reservations --number 50
 ```bash
 mailgun.com
 ID : cha2hyun.dev@gmail.com
-
 ```
