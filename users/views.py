@@ -49,15 +49,16 @@ class SignUpView(FormView):
         user.verify_email()
         return super().form_valid(form)
 
+
 def complete_verification(request, key):
     try:
         user = models.User.objects.get(email_secret=key)
         user.email_verified = True
         user.email_secret = ""
         user.save()
-        #to do : add success message
+        # to do : add success message
     except models.User.DoesNotExist:
-        #to do : add error message
+        # to do : add error message
         pass
     return redirect(reverse("core:home"))
 
@@ -69,8 +70,10 @@ def github_login(request):
         f"https://github.com/login/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&scope=read:user"
     )
 
+
 class GithubException(Exception):
     pass
+
 
 def github_callback(request):
     try:
@@ -85,11 +88,11 @@ def github_callback(request):
             token_json = token_request.json()
             error = token_json.get("error", None)
             if error is not None:
-                raise GithubException() 
+                raise GithubException()
             else:
                 access_token = token_json.get("access_token")
                 profile_request = requests.get(
-                    "https://api.github.com/user", 
+                    "https://api.github.com/user",
                     headers={
                         "Authorization": f"token {access_token}",
                         "Accept": "application/json",
@@ -103,23 +106,23 @@ def github_callback(request):
                     bio = profile_json.get("bio")
                     try:
                         user = models.User.objects.get(email=email)
-                        if user.login_method != models.User.LOGIN_GITHUB:                            
+                        if user.login_method != models.User.LOGIN_GITHUB:
                             raise GithubException()
                     except models.User.DoesNotExist:
                         user = models.User.objects.create(
-                            email=email, 
-                            first_name=name, 
-                            username=email, 
-                            bio=bio, 
+                            email=email,
+                            first_name=name,
+                            username=email,
+                            bio=bio,
                             login_method=models.User.LOGIN_GITHUB,
                             email_verified=True,
                         )
                         user.set_unusable_password()
                         user.save()
                     login(request, user)
-                    return redirect(reverse("core:home"))    
+                    return redirect(reverse("core:home"))
                 else:
-                    raise GithubException()  
+                    raise GithubException()
 
         else:
             raise GithubException()
@@ -138,6 +141,7 @@ def kakao_login(request):
 
 class KakaoException(Exception):
     pass
+
 
 def kakao_callback(request):
     try:
@@ -159,7 +163,7 @@ def kakao_callback(request):
             },
         )
         profile_json = profile_request.json()
-        email = profile_json.get("kaccount_email",None)
+        email = profile_json.get("kaccount_email", None)
         if email is None:
             raise KakaoException()
         properties = profile_json.get("properties")
@@ -182,12 +186,11 @@ def kakao_callback(request):
             if profile_image is not None:
                 photo_request = requests.get(profile_image)
                 user.avatar.save(
-                    f"{nickname}-avatar", 
+                    f"{nickname}-avatar",
                     ContentFile(photo_request.content())
                 )
         login(request, user)
         return redirect(reverse("core:home"))
-
 
     except KakaoException:
         # send error message

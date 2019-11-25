@@ -64,15 +64,14 @@ ID : cha2hyun.dev@gmail.com
 
 ```bash
 Beautify : verify_email.html
-Fix : git login -> When user doesnt have any name, public email, bio 
+Fix : git login -> When user doesnt have any name, public email, bio
 ```
 
 ### Tailwind Css Installation
 
 ```bash
-0. install node.js
-1. going to airbnb-clone folder
-2. sudo apt install npm
+1. install node.js
+2. sudo pip install npm
 3. npm init
 4. npm install gulp gulp-postcss gulp-sass gulp-csso node-sass -D
 5. npm install tailwindcss -D

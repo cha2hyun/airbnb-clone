@@ -1,4 +1,12 @@
 <ul class="flex items-center text-sm font-medium h-full">
+    <li class="nav_link">
+        {% if user.is_authenticated %}
+            <a href="{% url "reservations:search" %}">Reservations</a>
+        {% else %}
+            <li class="nav_link"><a href="{% url "users:login" %}">Reservations</a></li>    
+        {% endif %}
+    </li>
+    
     {% if user.is_authenticated %}
         <li class="nav_link"><a href="{% url "users:logout" %}">Log out</a></li>
     {% else %}
