@@ -2,7 +2,6 @@
 
 ```
 Cloning Airbnb with Python, Django, Tailwind and more...
-Last README update 19.11.22
 ```
 
 # Installation
@@ -63,8 +62,8 @@ ID : cha2hyun.dev@gmail.com
 ### Todo later
 
 ```bash
-Beautify : verify_email.html
-Fix : git login -> When user doesnt have any name, public email, bio
+verify_email.html 꾸미기
+git login 수정하기
 ```
 
 ### Tailwind Css Installation
