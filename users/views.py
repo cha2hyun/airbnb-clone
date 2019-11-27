@@ -1,12 +1,11 @@
 import os
 import requests
-from django.views import View
-from django.views.generic import FormView
+from django.views.generic import FormView, DetailView
 from django.urls import reverse_lazy
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth import authenticate, login, logout
-from django.contrib import messages
 from django.core.files.base import ContentFile
+from django.contrib import messages
 from . import forms, models
 
 
@@ -161,21 +160,19 @@ def kakao_callback(request):
         access_token = token_json.get("access_token")
         profile_request = requests.get(
             "https://kapi.kakao.com/v1/user/me",
-            headers={
-                "Authorization": f"Bearer {access_token}"
-            },
+            headers={"Authorization": f"Bearer {access_token}"},
         )
         profile_json = profile_request.json()
         email = profile_json.get("kaccount_email", None)
         if email is None:
-            raise KakaoException("There is no email in your Kakao ID")
+            raise KakaoException("Please also give me your email")
         properties = profile_json.get("properties")
         nickname = properties.get("nickname")
         profile_image = properties.get("profile_image")
         try:
             user = models.User.objects.get(email=email)
             if user.login_method != models.User.LOGIN_KAKAO:
-                raise KakaoException(f"Please login with: {user.login_method}")
+                raise KakaoException(f"Please log in with: {user.login_method}")
         except models.User.DoesNotExist:
             user = models.User.objects.create(
                 email=email,
@@ -189,13 +186,16 @@ def kakao_callback(request):
             if profile_image is not None:
                 photo_request = requests.get(profile_image)
                 user.avatar.save(
-                    f"{nickname}-avatar",
-                    ContentFile(photo_request.content())
+                    f"{nickname}-avatar", ContentFile(photo_request.content)
                 )
         messages.success(request, f"Welcome back {user.first_name}")
         login(request, user)
         return redirect(reverse("core:home"))
-
     except KakaoException as e:
         messages.error(request, e)
         return redirect(reverse("users:login"))
+
+
+class UserProfileView(DetailView):
+    model = models.User
+    context_object_name = "user_obj"

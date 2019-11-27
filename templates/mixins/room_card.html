@@ -1,6 +1,6 @@
 <div class="w-1/4 mb-10 px-2 overflow-hidden">
     <a href="{% url 'rooms:detail' room.pk %}">
-        <div class="w-full h-64 bg-cover bg-center rounded-lg mb-2 " style="background-image: url({{room.first_photo}});"></div>
+        <div class="w-full h-64 bg-cover bg-center rounded-lg mb-2" style="background-image: url({{room.first_photo}});"></div>
         <div class="flex justify-between mb-2 truncate">
             <div class="w-4/5 overflow-hidden flex">
                 {% if room.host.superhost %}
