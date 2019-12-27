@@ -5,6 +5,7 @@ from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
 
 class EmailLoginOnlyView(UserPassesTestMixin):
+
     def test_func(self):
         return self.request.user.login_method == "email"
 
