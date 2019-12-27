@@ -64,6 +64,8 @@ ID : cha2hyun.dev@gmail.com
 ```bash
 verify_email.html 꾸미기
 git login 수정하기
+Edit-Profile Avatar 수정
+Edit-Password 에서 Placeholder 적용해보기 - form 만들어야함
 ```
 
 ### Tailwind Css Installation
