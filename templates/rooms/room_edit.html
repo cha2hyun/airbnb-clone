@@ -13,7 +13,7 @@
         {% include 'mixins/room/room_form.html' with form=form cta="Update Room"%}
         
         <div class="mt-5">
-            <a href="#" class="text-teal-500 font-medium">Edit Photo</a>    
+            <a href="{% url 'rooms:photos' room.pk %}" class="text-teal-500 font-medium">Edit Photo</a>    
         </div>
 
     </div>
