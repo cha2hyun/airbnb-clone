@@ -6,9 +6,23 @@ Cloning Airbnb with Python, Django, Tailwind and more...
 
 # Installation
 
+### first installation
+
+```bash
+MAC OS X
+1. install iterm2
+2. install oh my zsh
+3. setting the shell
+4. install brew
+5. install pipenv
+6. install java sdk
+7. install git
+```
+
 ### pipenv
 
 ```bash
+brew install pipenv
 pipenv --three                  // python version 3
 pipenv install django==2.2.6    // django version
 pipenv shell                    // Enter a bubble
