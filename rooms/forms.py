@@ -26,6 +26,7 @@ class CreatePhotoForm(forms.ModelForm):
         fields = ("caption",  "file")
 
     def save(self, pk, *args, **kwargs):
-        photo = super().save(comit=False)
-        models.Room.objects.ge(pk=pk)
-        photo.room =
+        photo = super().save(commit=False)
+        room = models.Room.objects.get(pk=pk)
+        photo.room = room
+        photo.save()
