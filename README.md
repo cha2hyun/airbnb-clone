@@ -82,9 +82,11 @@ Edit-Profile Avatar 수정
 Edit-Password 에서 Placeholder 적용해보기 - form 만들어야함
 edit photo에서 사진 수정하기
 edit room에서 delete room 만들어보기
+delete시 정말 삭제하겠습니까 메세지창 띄워보기
+enc-type 이 무엇인지 확인해보기
 ```
 
-### Tailwind Css Installation
+### Tailwind CSS Installation
 
 ```bash
 1. install node.js
