@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django_countries.fields import CountryField
 from core import models as core_models
+from cal import Calendar
 # Create your models here.
 
 
@@ -118,3 +119,8 @@ class Room(core_models.TimeStampedModel):
     #         return "1 bed"
     #     else:
     #         return f"{self.beds} beds"
+
+    def get_calendars(self):
+        calendar = Calendar(2019, 11)
+        print(calendar.get_month())
+        return False
