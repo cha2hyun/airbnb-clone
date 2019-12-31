@@ -80,6 +80,8 @@ verify_email.html 꾸미기
 git login 수정하기
 Edit-Profile Avatar 수정
 Edit-Password 에서 Placeholder 적용해보기 - form 만들어야함
+edit photo에서 사진 수정하기
+edit room에서 delete room 만들어보기
 ```
 
 ### Tailwind Css Installation

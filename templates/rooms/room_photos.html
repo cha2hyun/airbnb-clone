@@ -14,7 +14,7 @@
             <a href="{% url 'rooms:add-photo' room.pk %}"  class="btn-link w-1/6 block">Upload Photo</a>
          </div>
 
-        {% for photo in room.photos.all  %}
+        {% for photo in room.photos.all %}
         <div class="mb-5 border p-6 border-gray-400 flex justify-between">
             <div class="flex items-start">
                 <img src="{{photo.file.url}}" class="w-32 h-32" />
