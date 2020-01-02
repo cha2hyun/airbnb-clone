@@ -43,7 +43,7 @@ class Calendar(calendar.Calendar):
                 month = now.month
                 past = False
                 if month == self.month:
-                    if day <= today:
+                    if day < today:
                         past = True
                 new_day = Day(day, past)
                 days.append(new_day)
