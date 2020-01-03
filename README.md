@@ -85,6 +85,7 @@ edit room에서 delete room 만들어보기
 delete시 정말 삭제하겠습니까 메세지창 띄워보기
 enc-type 이 무엇인지 확인해보기
 css grid 강의 보기
+예약할때 자바스크립트 이용해서 하루 이상 가능하게 해보기, 체크인, 체크아웃 지정해서 range 설정
 ```
 
 ### Tailwind CSS Installation
