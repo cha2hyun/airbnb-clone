@@ -23,12 +23,12 @@ class Reservation(core_models.TimeStampedModel):
     """ Reservation Model Definition """
 
     STATUS_PENDING = "pending"
-    STATUS_CONFIRM = "confirmed"
+    STATUS_CONFIRMED = "confirmed"
     STATUS_CANCELED = "canceled"
 
     STATUS_CHOICES = (
         (STATUS_PENDING, "Pending"),
-        (STATUS_CONFIRM, "Confirmed"),
+        (STATUS_CONFIRMED, "Confirmed"),
         (STATUS_CANCELED, "Canceled"),
     )
 

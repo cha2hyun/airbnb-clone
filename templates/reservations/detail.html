@@ -15,10 +15,7 @@
 
         <div class="flex flex-col items-start border-l border-r border-t border-b">
             <div class="font-medium border-b py-8 px-5 w-full">
-                {{reservation.check_in}} - {{reservation.check_out}} 
-                <span class="ml-5 {% if reservation.status == 'pending' %} text-yellow-600 {% elif reservation.status == 'canceled' %} text-red-600 {% else %} text-teal-600 {% endif %}">
-                    {{reservation.get_status_display}}
-                </span>
+                {{reservation.check_in}} - {{reservation.check_out}} <span class="ml-5 {% if reservation.status == 'pending' %} text-yellow-500 {% elif reservation.status == 'canceled' %} text-red-600 {% else %} text-teal-600 {% endif %}">{{reservation.get_status_display}}</span>
             </div>
     
             <span class="text-2xl border-b p-5 mt-2 w-full">
@@ -38,9 +35,9 @@
     
             <div class="py-10 px-5">
                 {% if reservation.status == 'pending' %}
-                    <a href="#" class="btn-link block px-3 mb-5">Cancel Reservation</a>            
-                    {% if reservation.room.host != user%}
-                        <a href="#" class="btn-link block px-3">Confirm Reservation</a>
+                    <a href="{% url 'reservations:edit' reservation.pk 'cancel' %}" class="btn-link block px-5">Cancel Reservation</a>
+                    {% if reservation.room.host == user %}
+                        <a href="{% url 'reservations:edit' reservation.pk 'confirm' %}" class="btn-link block px-3 mb-5">Confirm Reservation</a>
                     {% endif %}
                 {% endif %}
             </div>
