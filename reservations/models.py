@@ -3,7 +3,6 @@ from django.db import models
 from django.utils import timezone
 from core import models as core_models
 from . import managers
-# Create your models here.
 
 
 class BookedDay(core_models.TimeStampedModel):
@@ -33,15 +32,11 @@ class Reservation(core_models.TimeStampedModel):
         (STATUS_CANCELED, "Canceled"),
     )
 
-    status = models.CharField(
-        max_length=12, choices=STATUS_CHOICES, default=STATUS_PENDING)
-
+    status = models.CharField(max_length=12, choices=STATUS_CHOICES, default=STATUS_PENDING)
     check_in = models.DateField()
     check_out = models.DateField()
-    guest = models.ForeignKey(
-        "users.User", related_name="reservations", on_delete=models.CASCADE)
-    room = models.ForeignKey(
-        "rooms.Room", related_name="reservations", on_delete=models.CASCADE)
+    guest = models.ForeignKey("users.User", related_name="reservations", on_delete=models.CASCADE)
+    room = models.ForeignKey("rooms.Room", related_name="reservations", on_delete=models.CASCADE)
     objects = managers.CustomReservationManager()
 
     def __str__(self):
@@ -70,5 +65,5 @@ class Reservation(core_models.TimeStampedModel):
                 for i in range(difference.days + 1):
                     day = start + datetime.timedelta(days=i)
                     BookedDay.objects.create(day=day, reservation=self)
-
+                return
         return super().save(*args, **kwargs)
