@@ -33,7 +33,10 @@ class ReservationDetail(View):
 
     """ ReservationDetail Definition"""
 
-    reservation = models.Reservation
+    def get(self, pk):
+        reservation = models.Reservation.objects.get_or_none(pk=pk)
+        if not reservation:
+            return redirect(reverse("core:home"))
 
 
 class SearchView(View):
