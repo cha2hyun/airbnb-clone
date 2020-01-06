@@ -50,7 +50,7 @@ PROJECT_APPS = [
     'reviews.apps.ReviewsConfig',
     'reservations.apps.ReservationsConfig',
     'lists.apps.ListsConfig',
-    'conversations.apps.ConversationsConfig'
+    'conversations.apps.ConversationsConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
@@ -63,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.locale.LocaleMiddleware",
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -159,4 +160,4 @@ LOGIN_URL = "/users/login/"
 
 # Locale
 
-LOCALE_PATH = (os.path.join(BASE_DIR, "locale"),)
+LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)

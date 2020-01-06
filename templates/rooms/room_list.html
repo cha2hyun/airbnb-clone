@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static i18n %}
 {% block page_name %}
     home
 {% endblock page_name %}
@@ -20,8 +21,8 @@
                     <i class="fas fa-arrow-left fa-lg"></i>
                 </a>
             {% endif %}
-            <span class="mx-3 font-medium text-lg">
-                Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}
+            <span class="mx-3 font-medium text-lg">            
+                {% blocktrans with current_page=page_obj.number total_pages=page_obj.paginator.num_pages %}Page {{current_page}} of {{total_pages}}{% endblocktrans %}    
             </span>
             {% if page_obj.has_next %}
                 <a href="?page={{page_obj.next_page_number}}" class="text-teal-500">
@@ -29,6 +30,5 @@
                 </a>
             {% endif %}
         </div>
-
     </div>
 {% endblock content %}

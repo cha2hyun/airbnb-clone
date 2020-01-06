@@ -108,4 +108,6 @@ css grid 강의 보기
 ```
 Install GNU gettext : brew install gettext
 Create symlink : brew link gettext --force
+django-admin makemessage --locale==ko,en,..등등
+수정후 django-admin compilemessages
 ```

@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 from django.shortcuts import redirect, reverse
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
