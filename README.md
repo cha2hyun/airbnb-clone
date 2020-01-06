@@ -17,6 +17,7 @@ MAC OS X
 5. install pipenv
 6. install java sdk
 7. install git
+
 ```
 
 ### pipenv
@@ -100,4 +101,11 @@ css grid 강의 보기
 7. npx tailwind init
 8. npm install autoprefixer -D
 9. npm run css
+```
+
+### Locale
+
+```
+Install GNU gettext : brew install gettext
+Create symlink : brew link gettext --force
 ```
