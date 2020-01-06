@@ -40,12 +40,22 @@
             </div>
         </div>
     </div>
-    <div class="container mx-auto text-left pl-4 py-3 border-t font-light text-gray-500 flex flex-col">
-        <span>
-            {% trans "Please don't copy us." %}
-        </span>
-        <span>
-            &copy; 2019 cha2hyun. {% trans "All rights reserved." %} 
-        </span>
+    <div class="container mx-auto text-left pl-4 py-3 border-t font-light text-gray-500">
+        <div class="felx flex-col">
+            <span>
+                {% trans "Please don't copy us." %}
+            </span>
+            <span>
+                &copy; 2019 cha2hyun. {% trans "All rights reserved." %} 
+            </span>
+        </div>
+
+        <div class="flex mt-10">
+            <select class="w-1/5 h-8" id="js-lang">
+                <option value="en">English</option>
+                <option value="kr">Korean</option>
+            </select>
+        </div>
+
     </div>
 </footer>
