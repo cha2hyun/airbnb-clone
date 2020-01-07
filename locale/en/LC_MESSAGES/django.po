@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-06 16:31+0900\n"
+"POT-Creation-Date: 2020-01-07 11:57+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,3 +29,40 @@ msgstr "Please don't copy us."
 #: templates/partials/footer.html:49
 msgid "All rights reserved."
 msgstr "All rights reserved."
+
+#: templates/rooms/room_detail.html:98
+msgid "Remove from Favorites"
+msgstr ""
+
+#: templates/rooms/room_detail.html:100
+msgid "Save to Favorites"
+msgstr ""
+
+#: templates/rooms/room_list.html:25
+#, python-format
+msgid "Page %(current_page)s of %(total_pages)s"
+msgstr ""
+
+#: users/models.py:20
+msgid "Male"
+msgstr ""
+
+#: users/models.py:21
+msgid "Female"
+msgstr ""
+
+#: users/models.py:22
+msgid "Other"
+msgstr ""
+
+#: users/models.py:28
+msgid "English"
+msgstr ""
+
+#: users/models.py:29
+msgid "Korean"
+msgstr ""
+
+#: users/models.py:69
+msgid "Verify Airbnb Account"
+msgstr ""

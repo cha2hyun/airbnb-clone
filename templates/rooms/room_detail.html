@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load is_booked i18n %}
+{% load is_booked on_favs i18n %}
 
 {% block page_title %}
 	{{room.name}}
@@ -93,7 +93,12 @@
 				<a href="{% url 'rooms:edit' room.pk %}" class="btn-link block">Edit Room</a>
 			{% else %}				
 				{% if not request.session.is_hosting %}	
-					<a href="{% url 'lists:save-room' room.pk %}" class="btn-link block mb-10 w-full">{% trans 'Save to Favorites' %}</a>
+					{% on_favs room as on_favs_boolean %}				
+					{% if on_favs_boolean %}
+						<a href="{% url 'lists:save-room' room.pk %}" class="btn-link block mb-10 w-full bg-teal-600">{% trans 'Remove from Favorites' %}</a>
+					{% else %}
+						<a href="{% url 'lists:save-room' room.pk %}" class="btn-link block mb-10 w-full">{% trans 'Save to Favorites' %}</a>
+					{% endif %}	
 					{% for calendar in room.get_calendars %}
 					<div class ="mb-20">			
 						<span class="text-center font-semibold text-lg block mb-8">{{calendar.get_month}} / {{calendar.year}}</span>
