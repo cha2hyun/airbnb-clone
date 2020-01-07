@@ -29,6 +29,12 @@
 					<span class="mt-2 text-gray-500">{{room.host.first_name}}</span>
 				</a>
 			</div>
+			{% on_favs room as on_favs_boolean %}				
+			{% if on_favs_boolean %}
+                <a class="block mb-10 w-2/6 text-red-600 font-bold" href="{% url 'lists:toggle-room' room.pk %}?action=remove">{% trans "Remove from Favorites" %}</a>
+            {% else %}
+                <a class="block mb-10 w-2/6 text-teal-600 font-bold" href="{% url 'lists:toggle-room' room.pk %}?action=add">{% trans "Save to Favorites" %}</a>
+            {% endif %}
 			<div class="flex border-section">
 				<span class="mr-5 font-light">{{room.room_type}}</span>
 				<span class="mr-5 font-light">{{room.beds}} bed{{room.beds|pluralize}}</span>
@@ -93,12 +99,6 @@
 				<a href="{% url 'rooms:edit' room.pk %}" class="btn-link block">Edit Room</a>
 			{% else %}				
 				{% if not request.session.is_hosting %}	
-					{% on_favs room as on_favs_boolean %}				
-					{% if on_favs_boolean %}
-						<a href="{% url 'lists:save-room' room.pk %}" class="btn-link block mb-10 w-full bg-teal-600">{% trans 'Remove from Favorites' %}</a>
-					{% else %}
-						<a href="{% url 'lists:save-room' room.pk %}" class="btn-link block mb-10 w-full">{% trans 'Save to Favorites' %}</a>
-					{% endif %}	
 					{% for calendar in room.get_calendars %}
 					<div class ="mb-20">			
 						<span class="text-center font-semibold text-lg block mb-8">{{calendar.get_month}} / {{calendar.year}}</span>

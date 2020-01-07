@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-07 11:57+0900\n"
+"POT-Creation-Date: 2020-01-07 14:06+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,11 +30,35 @@ msgstr "Please don't copy us."
 msgid "All rights reserved."
 msgstr "All rights reserved."
 
-#: templates/rooms/room_detail.html:98
+#: templates/partials/nav.html:21
+msgid "Create Room"
+msgstr ""
+
+#: templates/partials/nav.html:23
+msgid "Favs"
+msgstr ""
+
+#: templates/partials/nav.html:24
+msgid "Profile"
+msgstr ""
+
+#: templates/partials/nav.html:25
+msgid "Logout"
+msgstr ""
+
+#: templates/partials/nav.html:27
+msgid "Login"
+msgstr ""
+
+#: templates/partials/nav.html:28
+msgid "Sign Up"
+msgstr ""
+
+#: templates/rooms/room_detail.html:34
 msgid "Remove from Favorites"
 msgstr ""
 
-#: templates/rooms/room_detail.html:100
+#: templates/rooms/room_detail.html:36
 msgid "Save to Favorites"
 msgstr ""
 
