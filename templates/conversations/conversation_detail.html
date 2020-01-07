@@ -28,7 +28,7 @@
         <div class="flex-grow">
         <div class="border  ml-10 p-10 flex flex-col">
                 {% if conversation.messages.count == 0 %}
-                    no messages
+                        <span class="w-full block text-lg font-medium">no messages</span>
                 {% else %}
                     {% for message in conversation.messages.all  %}
                         <div class="mb-10 {% if message.user.pk == user.pk %}
