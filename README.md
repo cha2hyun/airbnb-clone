@@ -124,7 +124,7 @@ command: "django-admin seed_facilities"
 07_seed_roomtypes:
 command: "django-admin seed_roomtypes"
 071_seed_amenities:
-command: "django-admin amenities"
+command: "django-admin seed_amenities"
 08_seed_users:
 command: "django-admin seed_users --number 150"
 09_seed_rooms:
@@ -132,8 +132,8 @@ command: "django-admin seed_rooms --number 250"
 10_seed_reviews:
 command: "django-admin seed_reviews --number 250"
 11_seed_lists:
-command: "django-admin seed_lists --number 250"
+command: "django-admin seed_lists"
 12_seed_reservations:
 command: "django-admin seed_reservations --number 250"
-13_seed_avatar_delete
+13_seed_avatar_delete:
 command: "django-admin seed_avatars"
