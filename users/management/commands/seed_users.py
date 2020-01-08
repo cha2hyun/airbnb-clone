@@ -67,5 +67,4 @@ class Command(BaseCommand):
             if user.first_name == "Unnamed User":
                 user.first_name = user.last_name
                 user.save()
-            user.avatar.delete(save=True)
         self.stdout.write(self.style.SUCCESS(f"Done!"))
