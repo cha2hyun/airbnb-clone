@@ -16,6 +16,7 @@ django-seed = "*"
 django-dotenv = "*"
 requests = "*"
 pipenv-to-requirements = "*"
+sentry-sdk = "==0.13.5"
 
 [requires]
 python_version = "3.7"
