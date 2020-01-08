@@ -46,7 +46,7 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    'django_countries', 'django_seed',
+    'django_countries', 'django_seed', 'storages'
 ]
 
 PROJECT_APPS = [
@@ -184,6 +184,18 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 
 # Sentry
 if not DEBUG:
+
+    DEFAULT_FILE_STORAGE = 'config.custom_storages.UploadStorage'
+    STATICFILES_STORAGE = 'config.custom_storages.StaticStorage'
+    AWS_ACCESS_KEY_ID = 'AKIAYOCQFVH6WIC3HH7E'
+    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_STORAGE_BUCKET_NAME = 'airbnb-clone-cha2hyun'
+    AWS_AUTO_CREATE_BUCKET = True
+    AWS_BUCKET_ACL = 'public-read'
+
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static"
+
     sentry_sdk.init(
         dsn=os.environ.get("SENTRY_URL"),
         integrations=[DjangoIntegration()],

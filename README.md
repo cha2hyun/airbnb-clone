@@ -88,6 +88,7 @@ enc-type 이 무엇인지 확인해보기
 css grid 강의 보기
 예약할때 자바스크립트 이용해서 하루 이상 가능하게 해보기, 체크인, 체크아웃 지정해서 range 설정
 AWS 환경변수 이용해서 admin/ 주소 계속 랜덤으로 바꾸기
+AWS 환경변수에 ID, KEY 업로드
 ```
 
 ### Tailwind CSS Installation
