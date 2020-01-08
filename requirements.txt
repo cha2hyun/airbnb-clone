@@ -1,15 +1,4 @@
-################################################################################
-# This requirements file has been automatically generated from `Pipfile` with
-# `pipenv-to-requirements`
-#
-#
-# This has been done to maintain backward compatibility with tools and services
-# that do not support `Pipfile` yet.
-#
-# Do NOT edit it directly, use `pipenv install [-d]` to modify `Pipfile` and
-# `Pipfile.lock` and then regenerate `requirements*.txt`.
-################################################################################
-
+-i https://pypi.org/simple/
 boto3==1.10.48
 botocore==1.13.48
 certifi==2019.11.28
@@ -18,7 +7,7 @@ django-countries==5.5
 django-dotenv==1.4.2
 django-seed==0.1.9
 django-storages==1.8
-django==2.2.6
+django==2.2.8
 docutils==0.15.2
 faker==3.0.0
 idna==2.8
