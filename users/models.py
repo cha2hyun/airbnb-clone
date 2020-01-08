@@ -39,12 +39,12 @@ class User(AbstractUser):
 
     LOGIN_EMAIL = "email"
     LOGIN_GITHUB = "github"
-    LOGING_KAKAO = "kakao"
+    LOGIN_KAKAO = "kakao"
 
     LOGIN_CHOICES = (
         (LOGIN_EMAIL, "Email"),
         (LOGIN_GITHUB, "Github"),
-        (LOGING_KAKAO, "Kakao"),
+        (LOGIN_KAKAO, "Kakao"),
     )
 
     # first_name = models.CharField(
