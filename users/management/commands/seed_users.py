@@ -1,10 +1,7 @@
 from django.core.management.base import BaseCommand
 # from django_seed import Seed
 from users.models import User
-
-
 import random
-
 
 __version__ = '0.1.9'
 
