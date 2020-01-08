@@ -1,4 +1,6 @@
+import requests
 from django.core.management.base import BaseCommand
+from django.core.files.base import ContentFile
 # from django_seed import Seed
 from users.models import User
 import random
@@ -60,3 +62,9 @@ class Command(BaseCommand):
         seeder.add_entity(User, number, {"is_staff": False, "is_superuser": False})
         seeder.execute()
         self.stdout.write(self.style.SUCCESS(f"{number} users created!"))
+        users = User.objects.all()
+        for user in users:
+            if user.first_name == "Unnamed User":
+                user.first_name = user.last_name
+                user.save()
+        self.stdout.write(self.style.SUCCESS(f"Done!"))

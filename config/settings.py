@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET", "wLv2Ty]>29YG<9zNnu<n")
 DEBUG = os.environ.get("DEBUG") == "True"
 # DEBUG = True
 
-ALLOWED_HOSTS = [".elasticbeanstalk.com"]
+ALLOWED_HOSTS = [".elasticbeanstalk.com", "127.0.0.1"]
 
 
 # Application definition
@@ -202,4 +202,6 @@ if not DEBUG:
         # If you wish to associate users to errors (assuming you are using
         # django.contrib.auth) you may enable sending PII data.
         send_default_pii=True,
+        ignore_errors=["django.security.DisallowedHost"],
     )
+    sentry_sdk.integrations.logging.ignore_logger("django.security.DisallowedHost")

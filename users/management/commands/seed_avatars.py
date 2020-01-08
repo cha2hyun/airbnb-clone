@@ -12,4 +12,5 @@ class Command(BaseCommand):
         users = User.objects.all()
         for user in users:
             user.avatar.delete(save=True)
+
         self.stdout.write(self.style.SUCCESS(f"Done!"))
