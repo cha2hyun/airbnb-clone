@@ -116,9 +116,6 @@ django-admin makemessage --locale==ko,en,..등등
 수정후 django-admin compilemessages
 ```
 
-Access ID : AKIAYOCQFVH6WIC3HH7E
-Access KEY : l5wEtn+t+C9cQvtdBbQ9p9WG4Wkyw4Vt3SZyvdqi
-
 06_seed_facilities:
 command: "django-admin seed_facilities"
 07_seed_roomtypes:
