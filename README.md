@@ -116,6 +116,15 @@ django-admin makemessage --locale==ko,en,..등등
 수정후 django-admin compilemessages
 ```
 
+### AWS SERVER
+
+```
+pipenv install awsebcli --dev
+eb init
+eb create 이름
+eb deploy
+```
+
 06_seed_facilities:
 command: "django-admin seed_facilities"
 07_seed_roomtypes:
