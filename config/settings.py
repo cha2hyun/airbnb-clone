@@ -191,7 +191,7 @@ if not DEBUG:
     # STATICFILES_STORAGE = 'storage.backends.s3boto3.S3Boto3Storage'
     AWS_ACCESS_KEY_ID = os.environ.get("AWS_ID")
     AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_KEY")
-    AWS_STORAGE_BUCKET_NAME = 'airbnb-clone-cha2hyun.dev'
+    AWS_STORAGE_BUCKET_NAME = 'elasticbeanstalk-ap-northeast-2-329078347595'
     AWS_AUTO_CREATE_BUCKET = True
     AWS_BUCKET_ACL = 'public-read'
     AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
