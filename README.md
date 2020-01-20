@@ -143,3 +143,10 @@ command: "django-admin seed_lists"
 command: "django-admin seed_reservations --number 250"
 13_seed_avatar_delete:
 command: "django-admin seed_avatars"
+
+container_commands:
+01_migrate:
+command: "django-admin migrate"
+leader_only: true
+02_compilemessages:
+command: "django-admin compilemessages"
