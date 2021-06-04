@@ -9,7 +9,7 @@ autopep8 = "*"
 awsebcli = "*"
 
 [packages]
-django = "==2.2.6"
+django = "==2.2.21"
 pillow = "*"
 django-countries = "*"
 django-seed = "*"
